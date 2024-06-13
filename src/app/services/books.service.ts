@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { IBook } from '../models/IBook.interface';
+import { Observable, of } from 'rxjs';
+import { IPagination } from '../models/IPagination.interface';
 
 @Injectable({
   providedIn: 'root',
@@ -21,7 +23,7 @@ export class BooksService {
       genre: 'Science',
     },
     {
-      id: 1,
+      id: 2,
       title: 'Sapiens: A Brief History of Humankind',
       author: 'Yuval Noah Harari',
       img: 'https://images-na.ssl-images-amazon.com/images/I/713jIoMO3UL.jpg',
@@ -33,7 +35,7 @@ export class BooksService {
       genre: 'History',
     },
     {
-      id: 1,
+      id: 3,
       title: 'The Innovators',
       author: 'Walter Isaacson',
       img: 'https://images-na.ssl-images-amazon.com/images/I/91CWdR92KdL.jpg',
@@ -45,7 +47,7 @@ export class BooksService {
       genre: 'Technology',
     },
     {
-      id: 1,
+      id: 4,
       title: 'Thinking, Fast and Slow',
       author: 'Daniel Kahneman',
       img: 'https://images-na.ssl-images-amazon.com/images/I/71I7l4Z3FHL.jpg',
@@ -57,7 +59,7 @@ export class BooksService {
       genre: 'Psychology',
     },
     {
-      id: 1,
+      id: 5,
       title: 'To Kill a Mockingbird',
       author: 'Harper Lee',
       img: 'https://images-na.ssl-images-amazon.com/images/I/81h2gWPTYJL.jpg',
@@ -69,7 +71,7 @@ export class BooksService {
       genre: 'Literature',
     },
     {
-      id: 1,
+      id: 5,
       title: 'Freakonomics',
       author: 'Steven D. Levitt',
       img: 'https://images-na.ssl-images-amazon.com/images/I/71qwRz5CTiL.jpg',
@@ -81,7 +83,7 @@ export class BooksService {
       genre: 'Economics',
     },
     {
-      id: 1,
+      id: 7,
       title: 'The Power of Habit',
       author: 'Charles Duhigg',
       img: 'https://images-na.ssl-images-amazon.com/images/I/71T0dMBirwL.jpg',
@@ -93,7 +95,7 @@ export class BooksService {
       genre: 'Psychology',
     },
     {
-      id: 1,
+      id: 8,
       title: 'Quiet: The Power of Introverts',
       author: 'Susan Cain',
       img: 'https://images-na.ssl-images-amazon.com/images/I/81tKtU9Q4DL.jpg',
@@ -105,7 +107,7 @@ export class BooksService {
       genre: 'Psychology',
     },
     {
-      id: 1,
+      id: 9,
       title: 'The Art of War',
       author: 'Sun Tzu',
       img: 'https://images-na.ssl-images-amazon.com/images/I/81wxemfNxJL.jpg',
@@ -117,7 +119,7 @@ export class BooksService {
       genre: 'Philosophy',
     },
     {
-      id: 1,
+      id: 10,
       title: '1984',
       author: 'George Orwell',
       img: 'https://images-na.ssl-images-amazon.com/images/I/81ICvb5dQUL.jpg',
@@ -129,7 +131,7 @@ export class BooksService {
       genre: 'Science Fiction',
     },
     {
-      id: 1,
+      id: 11,
       title: 'Steve Jobs',
       author: 'Walter Isaacson',
       img: 'https://images-na.ssl-images-amazon.com/images/I/81VStYnDGrL.jpg',
@@ -141,7 +143,7 @@ export class BooksService {
       genre: 'Biography',
     },
     {
-      id: 1,
+      id: 12,
       title: 'The History of the Ancient World',
       author: 'Susan Wise Bauer',
       img: 'https://images-na.ssl-images-amazon.com/images/I/91Uw8n9HfJL.jpg',
@@ -153,7 +155,7 @@ export class BooksService {
       genre: 'History',
     },
     {
-      id: 1,
+      id: 13,
       title: 'The Selfish Gene',
       author: 'Richard Dawkins',
       img: 'https://images-na.ssl-images-amazon.com/images/I/71I9UncHcqL.jpg',
@@ -165,7 +167,7 @@ export class BooksService {
       genre: 'Science',
     },
     {
-      id: 1,
+      id: 14,
       title: 'Clean Code',
       author: 'Robert C. Martin',
       img: 'https://images-na.ssl-images-amazon.com/images/I/41SH-SvWPxL.jpg',
@@ -177,7 +179,7 @@ export class BooksService {
       genre: 'Technology',
     },
     {
-      id: 1,
+      id: 15,
       title: 'Meditations',
       author: 'Marcus Aurelius',
       img: 'https://images-na.ssl-images-amazon.com/images/I/81-5XOaB8YL.jpg',
@@ -189,7 +191,7 @@ export class BooksService {
       genre: 'Philosophy',
     },
     {
-      id: 1,
+      id: 16,
       title: 'The Wealth of Nations',
       author: 'Adam Smith',
       img: 'https://images-na.ssl-images-amazon.com/images/I/81lX5o4Tz9L.jpg',
@@ -201,7 +203,7 @@ export class BooksService {
       genre: 'Economics',
     },
     {
-      id: 1,
+      id: 17,
       title: 'Pride and Prejudice',
       author: 'Jane Austen',
       img: 'https://images-na.ssl-images-amazon.com/images/I/81s9klFGhwL.jpg',
@@ -213,7 +215,7 @@ export class BooksService {
       genre: 'Literature',
     },
     {
-      id: 1,
+      id: 18,
       title: 'The Subtle Art of Not Giving a F*ck',
       author: 'Mark Manson',
       img: 'https://images-na.ssl-images-amazon.com/images/I/71QKQ9mwV7L.jpg',
@@ -225,7 +227,7 @@ export class BooksService {
       genre: 'Self-help',
     },
     {
-      id: 1,
+      id: 19,
       title: 'Becoming',
       author: 'Michelle Obama',
       img: 'https://images-na.ssl-images-amazon.com/images/I/81h2gWPTYJL.jpg',
@@ -237,7 +239,7 @@ export class BooksService {
       genre: 'Biography',
     },
     {
-      id: 1,
+      id: 20,
       title: 'Educated',
       author: 'Tara Westover',
       img: 'https://images-na.ssl-images-amazon.com/images/I/81WojUxbbFL.jpg',
@@ -249,7 +251,7 @@ export class BooksService {
       genre: 'Memoir',
     },
     {
-      id: 1,
+      id: 21,
       title: 'Atomic Habits',
       author: 'James Clear',
       img: 'https://images-na.ssl-images-amazon.com/images/I/91bYsX41DVL.jpg',
@@ -261,7 +263,7 @@ export class BooksService {
       genre: 'Self-help',
     },
     {
-      id: 1,
+      id: 22,
       title: 'Brave New World',
       author: 'Aldous Huxley',
       img: 'https://images-na.ssl-images-amazon.com/images/I/81dV+aOnOIL.jpg',
@@ -274,7 +276,11 @@ export class BooksService {
     },
   ];
 
-  get books(): IBook[] {
-    return this._books;
+  public getBooks(a:number): Observable<IPagination<IBook>> {
+    let books :IPagination<IBook> = {
+      count : this._books.length,
+      list : this._books
+    }
+    return of(books);
   }
 }
