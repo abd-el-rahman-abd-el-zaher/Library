@@ -1,0 +1,13 @@
+<ul>
+    @for (book of books; track book) {
+    <li> 
+        <h3>{{ book.id }}</h3>
+        <span>{{ book.title }}</span>
+        <span>{{ book.author }}</span>
+        <span>{{ book.genre }}</span>
+        <span>{{ book.price }}</span>
+        <span>{{ book.description }}</span>
+        <span>{{ book.img }}</span>
+    </li>
+      }
+</ul>

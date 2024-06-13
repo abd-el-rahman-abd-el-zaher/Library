@@ -16,7 +16,7 @@ export class NavBarComponent implements OnInit {
 
   }
   ngOnInit(): void {
-    this.authService.inLogin.subscribe((isLoggedIn: boolean) => {
+    this.authService.loginObserver$.subscribe((isLoggedIn: boolean) => {
       this.isLoggedIn = !!localStorage.getItem('user');
     })
 
