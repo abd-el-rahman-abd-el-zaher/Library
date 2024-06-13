@@ -15,8 +15,10 @@ export class AuthService {
 
   logout() {
     localStorage.removeItem('user');
+    localStorage.removeItem('token');
     this.inLogin.next(false);
-    // this.router.navigate(['/login']);
+
+     this.router.navigate(['/']);
   }
 
   login(body: ILoggedIn) {

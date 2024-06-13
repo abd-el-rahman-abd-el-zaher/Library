@@ -14,7 +14,7 @@ export const routes: Routes = [
           import('./components/books/books.component').then(
             (c) => c.BooksComponent
           ),
-        // canActivate: [authGuard],
+        canActivate: [authGuard],
       },
     ],
   },
