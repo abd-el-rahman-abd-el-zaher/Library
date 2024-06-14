@@ -16,9 +16,11 @@
     id="navbarNav"
   >
     <ul class="navbar-nav">
+      @if (isLoggedIn) {
       <li class="nav-item">
         <a class="nav-link" [routerLink]="'/portal/books'">Books</a>
       </li>
+      }
     </ul>
     <ul class="navbar-nav">
       @if (!isLoggedIn) {

@@ -1,4 +1,4 @@
-<ul>
+<!-- <ul>
     @for (book of books; track book) {
     <li> 
         <h3>{{ book.id }}</h3>
@@ -10,4 +10,23 @@
         <span>{{ book.img }}</span>
     </li>
       }
-</ul>
+</ul> -->
+
+  <table class="table table-hover">
+    <tr>
+      <th>Id</th>
+      <th>Title</th>
+      <th>Author</th>
+      <th>Genre</th>
+      <th>Price</th>
+    </tr>
+    @for (book of books; track book) {
+    <tr>
+      <td>{{ book.id }}</td>
+      <td>{{ book.title }}</td>
+      <td>{{ book.author }}</td>
+      <td>{{ book.genre }}</td>
+      <td>{{ book.price }}</td>
+    </tr>
+    }
+  </table>
