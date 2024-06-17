@@ -1,5 +1,6 @@
 import { authGuard } from './auth/Guards/auth.guard';
 import { Routes } from '@angular/router';
+import { notAuthGuard } from './auth/Guards/not-auth.guard';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'portal', pathMatch: 'full' },
@@ -38,6 +39,7 @@ export const routes: Routes = [
           import('./auth/components/login/login.component').then(
             (c) => c.LoginComponent
           ),
+          canActivate: [notAuthGuard],
       },
       {
         path: 'register',
@@ -45,6 +47,7 @@ export const routes: Routes = [
           import('./auth/components/register/register.component').then(
             (c) => c.RegisterComponent
           ),
+          canActivate: [notAuthGuard],
       },
     ],
   },
