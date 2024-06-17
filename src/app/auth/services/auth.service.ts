@@ -17,7 +17,6 @@ export class AuthService {
     localStorage.removeItem('user');
     localStorage.removeItem('token');
     this.inLogin.next(false);
-
      this.router.navigate(['/']);
   }
 
@@ -26,7 +25,7 @@ export class AuthService {
     localStorage.setItem('user', JSON.stringify(body));
     localStorage.setItem('token', JSON.stringify(body.token));
     localStorage.setItem('rememberMe', JSON.stringify(body.rememberMe));
-    this.router.navigate(['/']);
+    this.router.navigate(['/portal/']);
   }
 
   isLoggedIn(): boolean {

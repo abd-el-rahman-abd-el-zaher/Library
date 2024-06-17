@@ -14,7 +14,6 @@ export const routes: Routes = [
           import('./components/home/home.component').then(
             (c) => c.HomeComponent
           ),
-        canActivate: [authGuard],
       },
       {
         path: 'books',
