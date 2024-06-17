@@ -3,12 +3,12 @@ import { NavBarComponent } from '../nav-bar/nav-bar.component';
 import { RouterModule } from '@angular/router';
 
 @Component({
-  selector: 'app-home',
+  selector: 'app-portal',
   standalone: true,
   imports: [NavBarComponent,  RouterModule,],
-  templateUrl: './home.component.html',
-  styleUrl: './home.component.css'
+  templateUrl: './portal.component.html',
+  styleUrl: './portal.component.css'
 })
-export class HomeComponent {
+export class PortalComponent {
 
 }

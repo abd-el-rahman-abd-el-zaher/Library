@@ -6,8 +6,16 @@ export const routes: Routes = [
   {
     path: 'portal',
     loadComponent: () =>
-      import('./layout/home/home.component').then((c) => c.HomeComponent),
+      import('./layout/portal/portal.component').then((c) => c.PortalComponent),
     children: [
+      {
+        path: '',
+        loadComponent: () =>
+          import('./components/home/home.component').then(
+            (c) => c.HomeComponent
+          ),
+        canActivate: [authGuard],
+      },
       {
         path: 'books',
         loadComponent: () =>
