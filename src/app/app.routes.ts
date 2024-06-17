@@ -26,10 +26,26 @@ export const routes: Routes = [
     ],
   },
   {
-    path: 'login',
+    path: 'auth',
     loadComponent: () =>
-      import('./auth/components/login/login.component').then(
-        (c) => c.LoginComponent
+      import('./auth/components/auth/auth.component').then(
+        (c) => c.AuthComponent
       ),
+    children: [
+      {
+        path: 'login',
+        loadComponent: () =>
+          import('./auth/components/login/login.component').then(
+            (c) => c.LoginComponent
+          ),
+      },
+      {
+        path: 'register',
+        loadComponent: () =>
+          import('./auth/components/register/register.component').then(
+            (c) => c.RegisterComponent
+          ),
+      },
+    ],
   },
 ];
