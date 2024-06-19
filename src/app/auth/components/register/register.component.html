@@ -30,8 +30,53 @@
               </div>
             </div>
           </div>
-          <form action="#!" v [formGroup]="form">
+          <form action="#!" [formGroup]="form">
             <div class="row gy-3 gy-md-4 overflow-hidden">
+              <div class="col-12">
+                <label for="name" class="form-label"
+                  >Name <span class="text-danger">*</span></label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  name="name"
+                  id="name"
+                  placeholder="Enter your name"
+                  [formControlName]="'name'"
+                  required
+                />
+              </div>
+              <div class="col-12">
+                <label for="phone" class="form-label"
+                  >Phone <span class="text-danger">*</span></label
+                >
+                <input
+                  type="tel"
+                  class="form-control"
+                  name="phone"
+                  id="phone"
+                  placeholder="Enter your phone number"
+                  [formControlName]="'phone'"
+                  required
+                />
+              </div>
+              <div class="col-12">
+                <label for="gender" class="form-label"
+                  >Gender <span class="text-danger">*</span></label
+                >
+                <select
+                  class="form-control"
+                  name="gender"
+                  id="gender"
+                  [formControlName]="'gender'"
+                  required
+                >
+                  <option value="" disabled selected>Select your gender</option>
+                  <option value="male">Male</option>
+                  <option value="female">Female</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
               <div class="col-12">
                 <label for="email" class="form-label"
                   >Email <span class="text-danger">*</span></label
@@ -55,8 +100,22 @@
                   class="form-control"
                   name="password"
                   id="password"
-                  value=""
+                  placeholder="Enter your password"
                   [formControlName]="'password'"
+                  required
+                />
+              </div>
+              <div class="col-12">
+                <label for="repeatedPassword" class="form-label"
+                  >Repeat Password <span class="text-danger">*</span></label
+                >
+                <input
+                  type="password"
+                  class="form-control"
+                  name="repeatedPassword"
+                  id="repeatedPassword"
+                  placeholder="Repeat your password"
+                  [formControlName]="'repeatedPassword'"
                   required
                 />
               </div>
@@ -91,6 +150,7 @@
               </div>
             </div>
           </form>
+
           <div class="row">
             <div class="col-12">
               <hr class="mt-5 mb-4 border-secondary-subtle" />
