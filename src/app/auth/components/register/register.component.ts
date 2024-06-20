@@ -6,14 +6,15 @@ import {
   Validators,
 } from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
+import { RouterLink, RouterModule } from '@angular/router';
 @Component({
   selector: 'app-register',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [RouterModule, RouterLink, ReactiveFormsModule],
   templateUrl: './register.component.html',
-  styleUrl: './register.component.css'
+  styleUrl: './register.component.css',
 })
-export class RegisterComponent  implements OnInit {
+export class RegisterComponent implements OnInit {
   form: FormGroup = new FormGroup({});
 
   constructor(private fb: FormBuilder, private authService: AuthService) {}
@@ -35,6 +36,6 @@ export class RegisterComponent  implements OnInit {
   register() {
     let body = { ...this.form.value };
     body.token = '12345678910';
-    this.authService.login(body);
+    this.authService.register(body);
   }
 }
