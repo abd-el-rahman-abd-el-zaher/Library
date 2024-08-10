@@ -10,4 +10,5 @@ export interface IUser {
   password: string;
   gender: string;
   phone: string;
+  permissions: number[];
 }

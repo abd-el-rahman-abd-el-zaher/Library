@@ -36,6 +36,8 @@ export class RegisterComponent implements OnInit {
   register() {
     let body = { ...this.form.value };
     body.token = '12345678910';
+    // TODO: change it for different users 
+    body.permissions = [4001, 2002];
     this.authService.register(body);
   }
 }

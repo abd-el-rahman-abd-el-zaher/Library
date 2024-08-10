@@ -1,3 +1,4 @@
+import { Permissions } from './../../Configs/Permissions';
 import { Component, OnInit } from '@angular/core';
 import {
   FormBuilder,
@@ -11,7 +12,7 @@ import { RouterLink, RouterModule } from '@angular/router';
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [RouterModule, RouterLink,ReactiveFormsModule],
+  imports: [RouterModule, RouterLink, ReactiveFormsModule],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css',
 })
@@ -34,6 +35,7 @@ export class LoginComponent implements OnInit {
   login() {
     let body = { ...this.form.value };
     body.token = '12345678910';
+    body.permissions = [4001, 2002];
     this.authService.login(body);
   }
 }

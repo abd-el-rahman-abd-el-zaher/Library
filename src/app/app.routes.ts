@@ -1,6 +1,7 @@
 import { authGuard } from './auth/Guards/auth.guard';
 import { Routes } from '@angular/router';
 import { notAuthGuard } from './auth/Guards/not-auth.guard';
+import { Permissions } from './auth/Configs/Permissions';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'portal', pathMatch: 'full' },
@@ -23,6 +24,7 @@ export const routes: Routes = [
             (c) => c.BooksComponent
           ),
         canActivate: [authGuard],
+        data: { title: 'Books', displaySidebar: true, allowedClaims: [Permissions.Books.View] }, 
       },
     ],
   },
@@ -49,6 +51,24 @@ export const routes: Routes = [
           ),
           canActivate: [notAuthGuard],
       },
+    ],
+  },
+  {
+    path: 'not-auth',
+    loadComponent: () =>
+      import('./auth/components/not-auth/not-auth.component').then(
+        (c) => c.NotAuthComponent
+      ),
+    children: [
+      {
+        path: 'forbidden',
+        loadComponent: () =>
+          import('./auth/components/forbidden/forbidden.component').then(
+            (c) => c.ForbiddenComponent
+          ),
+          
+      },
+   
     ],
   },
 ];
